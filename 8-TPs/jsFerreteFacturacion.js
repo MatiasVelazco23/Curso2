@@ -42,7 +42,7 @@ var P3;
 P1=parseInt((document.getElementById("PrecioUno").value));
 P2=parseInt((document.getElementById("PrecioDos").value));
 P3=parseInt((document.getElementById("PrecioTres").value));
- var Pfinal=parseInt ((P1+P2+P3)+  21%(P1+P2+P3)); //Si ponía el % adelante me daba otro resultado
+ var Pfinal=parseInt ((P1+P2+P3)+ ((P1+P2+P3)*21)/100); //Si ponía el % adelante me daba otro resultado
 
  alert(Pfinal); //Hay algun operador?
  
