@@ -1,14 +1,23 @@
 function mostrar()
 {
 //tomo la edad  
-var mesDelAño = document.getElementById('mes').value;
+var mes = document.getElementById('mes').value;
 
 //alert (mesDelAño);
 	
-	31 dias
-Enero, Marzo, Mayo, Julio, Agosto, Octubre y Diciembre.
-
-febrero 28
-
-
+switch(mes){
+case "Enero":
+case "Marzo":
+case "Mayo":
+case "Julio":
+case "Agosto":
+case "Octubre":
+case "Diciembre":
+alert("Este mes tiene 31 días");
+break;
+case "Febrero":
+	alert("Este mes tiene 28 días")
+default:
+alert( "Este mes tiene 30 o más días");
+}
 }//FIN DE LA FUNCIÓN

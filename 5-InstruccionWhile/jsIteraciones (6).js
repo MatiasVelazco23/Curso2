@@ -1,13 +1,14 @@
+
 function mostrar()
 {
+var contador=0;
+var acumulador=0;
+var numero;
+var promedio;
+var acumular;
 
-	var contador=0;
-	var acumulador=0;
-	var promedio;
-	var numero;
 
-
-while(contador<4){
+while(contador<5){
 	numero=parseInt(prompt("Ingrese un numero"));
 	while(isNaN(numero)){
 		numero=parseInt(prompt("Eso no es un numero, Ingrese un numero"))
@@ -15,10 +16,11 @@ while(contador<4){
 	acumulador=acumulador+numero
 	contador++;	
 }
-                                                                                                  
+            promedio= acumulador/contador                                                                                      
 
 
-document.getElementById('suma').value=acumular;
+document.getElementById('suma').value=acumulador;
 document.getElementById('promedio').value=promedio;
 
-}//FIN DE LA FUNCIÓN
+}
+//FIN DE LA FUNCIÓN

@@ -15,7 +15,7 @@ do{
 
 		maximo=numero
 	}
-	if(flag==0|| numero<minimo) {
+	else if(flag==0|| numero<minimo) {
 	
 	minimo=numero
 	flag=1

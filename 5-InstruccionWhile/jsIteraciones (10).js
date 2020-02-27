@@ -1,41 +1,45 @@
 function mostrar()
 {
 
-	var contador=0;
-	var negativos=1
+	var contadorPositivos=0
+	var contadorNegativos=0
 	var positivos=0
-	var numeros;
-	//declarar contadores y variables 
-	
-	var seguir="si";
+	var negativos=1
+	var numero;
+	var seguir;
 
 
-	do {
+	do{
 		numero = parseInt(prompt("Ingrese un numero"));
 		while (isNaN(numero)) {
-			numero = parseInt(prompt("Eso no es un numero"));
+			numero = parseInt(prompt("Eso no es un numero,Ingrese un numero"));
 		}
-		if (numero >= 0) {
-
-			positivo = positivo + numero;
-		}
-		else {
-			negativo = negativo * numero
-			flag = 1
-	
-		}
-		seguir = prompt("Quiere seguir ingresando un numero");
-	} while (seguir == "si");
-
-
-	document.getElementById('suma').value = positivo;
-	document.getElementById('producto').value = negativo;
-	{
-		
+    if(numero>=0){
+		sumapositivos=positivos+numero;
+		contadorPositivos++
+	}
+	else{
+		sumanegativos=negativos+(numero)
+		contadorNegativos++
+ 
 	
 	}
+	seguir = prompt("Quiere seguir ingresando un numero");
+} while (seguir == "si");
+	
+	
+if (contadorNegativos==0) {
+	negativo = 0
+}
+else if (contadorPositivos==0){
+	positivos= 0
+}
+alert(sumapositivos);
+alert("la suma de negativos es"+sumanegativos);
 
+alert(contadorpositivos);
+alert(contadornegativos);
 
+}
 
-
-}//FIN DE LA FUNCIÓN
+//FIN DE LA FUNCIÓN

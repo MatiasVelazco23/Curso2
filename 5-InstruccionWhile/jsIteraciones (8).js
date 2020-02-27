@@ -3,7 +3,6 @@ function mostrar() {
 	var positivo = 0;
 	var negativo = 1;
 	var numero;
-	var seguir = "si";
 
 	do {
 		numero = parseInt(prompt("Ingrese un numero"));
@@ -20,7 +19,9 @@ function mostrar() {
 
 		}
 		seguir = prompt("Quiere seguir ingresando un numero");
-	} while (seguir = "si");
+	
+	} while (seguir == "si");
+	
 	
 	if (flag == 0) {
 		negativo = 0
