@@ -1,20 +1,23 @@
 function mostrar() {
  
 
-  numero = parseInt(prompt("Ingrese un número"));
-  var contadorDivisores = 0
 
-    while (isNaN(numero)) {
-        numero = parseInt(prompt("Ingrese un número"))
-    }
-    for (var i = 1; i<= numero; i++) {
-        if (i % numero == 0) {
-            console.log(i)
-            contadorDivisores++;
+    var numero = parseInt(prompt("Ingrese un Número"));
+    
+    var parcont=0;
+    
+    for (var contador = 1 ; contador <= numero ; contador++  )
+    {
+     
+        if ( contador % 2 == 0 )
+    
+        {
+            console.log(contador);
+            parcont++;
         }
+        
     }
-    console.log("Cantidad de pares encontrados" + contadorPares);
-
-
+    console.log("cantidad de pares " + parcont )
+    
 
 }//FIN DE LA FUNCIÓN

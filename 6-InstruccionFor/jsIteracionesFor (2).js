@@ -1,9 +1,9 @@
 function mostrar()
 {
-    num=10
-    for(var i=1;i<=1;i++)
-    {
-       document.write(num + "</br");
-    }
+  var contador= 10;
 
+  for(var contador = 10 ; contador >= 1 ; contador-- )
+{
+    document.write( contador + "</br>");
+}
 }

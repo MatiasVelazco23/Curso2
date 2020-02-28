@@ -17,10 +17,9 @@ break;
      case "Mayo":
 alert("Falta para el invierno.");
 break;
-case "Octubre":
-case "Noviembre":
-case "Diciembre":
-alert("Ya pasamos el frio, ahora calor!!!.")
+default:
+
+alert("Ya pasamos el frio, ahora el calor.");
 break;
     
 }
