@@ -8,108 +8,81 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-function CalcularPrecio () 
-{
-    var lamparas;
+function CalcularPrecio() {
+
+    var precio = 35;
+    var cantidad;
     var marca;
+    var porcDescuento;
     var descuento;
-    lamparas=parseInt(document.getElementById("Cantidad").value);
-marca=document.getElementById("Marca").value;
-descuento=parseInt(document.getElementById("precioDescuento").value);
-
-    
-if(lamparas>=6){
-        (lamparas*35)+(lamparas*35*50)/100;
-parseInt(document.getElementById("precioDescuento").value)=descuento;
-if(descuento => 120){
-    document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-}
-else {
-    document.getElementById("precioDescuento").value= descuento
-}
-}
-    else if (lamparas=5 && marca==ArgentinaLuz){
-        (lamparas*35)+(lamparas*40)/100
-        document.getElementById("precioDescuento").value=descuento;
-        if(descuento =>120){
-            document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-        }
-        else {
-            document.getElementById("precioDescuento").value= descuento
-        }
-    }
-    else if (lamparas=5){
-        (lamparas*35)+(lamparas*30)/100
-        document.getElementById("precioDescuento").value=descuento;
-        if(descuento =>120){
-            document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-        }
-        else {
-            document.getElementById("precioDescuento").value= descuento
-        }
-    }
-    else if (lamparas=4 && ((marca==ArgentinaLuz)|| (marca==FelipeLamparas))){
-        (lamparas*35)+(lamparas*25)/100
-        document.getElementById("precioDescuento").value=descuento;
-        if(descuento =>120){
-            document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-        }
-        else {
-            document.getElementById("precioDescuento").value= descuento
-        }
-    }
-    else if (lamparas=4){
-        (lamparas*35)+(lamparas*20)/100
-        document.getElementById("precioDescuento").value=descuento;
-        if(descuento =>120){
-            document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-        }
-        else {
-            document.getElementById("precioDescuento").value= descuento
-        }
-    }
-    else if (lamparas>=3 && marca==ArgentinaLuz){
-        (lamparas*35)+(lamparas*15)/100
-        document.getElementById("precioDescuento").value=descuento;
-        if(descuento =>120){
-            document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-        }
-        else {
-            document.getElementById("precioDescuento").value= descuento
-        }
-    }
-    else if (lamparas>=3 && marca==FelipeLamparas){
-        (lamparas*35)+(lamparas*10)/100
-        document.getElementById("precioDescuento").value=descuento;
-        if(descuento =>120){
-            document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-        }
-        else {
-            document.getElementById("precioDescuento").value= descuento
-        }
-    }
-    else if (lamparas>=3){
-        (lamparas*35)+(lamparas*5)/100
-        document.getElementById("precioDescuento").value=descuento;
-        if(descuento =>120){
-            document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-        }
-        else {
-            document.getElementById("precioDescuento").value= descuento
-        }
-    }
-
-    else{
-document.getElementById("precioDescuento").value=descuento
-if(descuento =>120){
-    document.getElementById("precioDescuento").value="El precio es" + descuento + "el impuesto de" + (descuento*10)/100
-}
-else {
-    document.getElementById("precioDescuento").value= descuento
-}
-    }
+    var precioConDescuento;
+    var importeFinal;
+    var iibb;
 
 
- 	
+    cantidad = parseInt(document.getElementById("Cantidad").value);
+    marca = document.getElementById("Marca").value;
+if(cantidad>0){
+    switch (cantidad) {
+
+        case 1:
+        case 2:
+            porcDescuento = 0;
+            break;
+        case 3:
+            if (marca == "ArgentinaLuz") {
+                porcDescuento = 15;
+            }
+            else if (marca == "FelipeLamparas") {
+                porcDescuento = 10;
+            }
+            else {
+
+                porcDescuento = 5;
+            }
+            break;
+        case 4:
+            if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+                porcDescuento = 25;
+            }
+            else {
+                porcDescuento = 20;
+            }
+            break;
+        case 5:
+            if (marca == "ArgentinaLuz") {
+                porcDescuento = 40;
+            }
+            else {
+                porcDescuento = 30;
+            }
+            break;
+        default:
+            porcDescuento = 50;
+
+    }
+    //------------------------------------
+    descuento = precio * porcDescuento / 100;
+
+    precioConDescuento = precio - descuento;
+
+    document.getElementById("precioDescuento").value = precioConDescuento;
+
+    importeFinal = precioConDescuento * cantidad;
+
+    if (importeFinal > 120) {
+        iibb = importeFinal * 10 / 100;
+        importeFinal = importeFinal + iibb;
+
+        alert("Total a pagar $ " + importeFinal + " Usted pago $ " + iibb + " de ingresos brutos");
+
+    }
+    else {
+        alert("Total a pagar $ " + importeFinal);
+    }
+}
+else{
+    alert("Esto no es un número");
+}
 
 }
