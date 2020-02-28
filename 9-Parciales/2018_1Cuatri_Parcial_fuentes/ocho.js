@@ -4,9 +4,10 @@ function mostrar() {
     var numero;
     var seguir;
     var contpos = 0
-    var contneg = 0
+    
     var conpares = 0
     var conimpar = 0
+    var conCeros
     var promPositiv = 0
     var acumuladorPos = 0
     var acumuladorNeg = 0
@@ -20,6 +21,9 @@ function mostrar() {
         while (numero < -100 || numero > 100 || isNaN(numero)) {
             numero = parseInt(prompt("Ingrese un número válido"));
         }
+        if(numero==0){
+            conCeros++
+        }
         if (numero > 0) {
             contpos++;
             acumuladorPos++;
@@ -27,7 +31,7 @@ function mostrar() {
         }
         else {
             acumuladorNeg = acumuladorNeg + numero
-            contneg++;
+        
         
         }
         if (numero % 2 == 0) {
@@ -45,20 +49,21 @@ function mostrar() {
     if (contpos != 0) {
         promPositiv = acumuladorPos / contpos;
     }
-    if (numero < numeroMin || flag == 0) {
-        numeroMin= numero;
+    if (numero < numeroMinimo || flag == 0) {
+        numeroMinimo= numero;
         letraMin = letra;
         flag = 1;
        }
-    else if(numero> numeroMax || flag==0){
-        numeroMax=numero
+    else if(numero> numeroMaximo || flag==0){
+        numeroMaximo=numero
         letraMax=letra
         flag=1
     }
-        document.write("a) Cantidad de numeros pares: " + conpares + "</br>" + "b) Cantidad de numeros impares: " + cantidadImpares + "</br>" + "c) Cantidad de ceros: " + cantidadCeros + "</br>" + "d) Promedio de todos los numeros positivos: " + promedioPositivo +
+    promPositiv=acumuladorPos/contpos;
+        document.write("a) Cantidad de numeros pares: " + conpares + "</br>" + "b) Cantidad de numeros impares: " + conimpar + "</br>" + "c) Cantidad de ceros: " + conCeros + "</br>" + "d) Promedio de todos los numeros positivos: " + promPositiv +
             "</br>" + "e) Suma de todos los numeros negativos:" + acumuladorNeg +
-            "</br>" + "f) Numero y letra del maximo: " + numeroMax + letraMax +
-            "</br>" + "f) Numero y letra del minimo:" + numeroMin + letraMin);
+            "</br>" + "f) Numero y letra del maximo: " + numeroMaximo + letraMax +
+            "</br>" + "f) Numero y letra del minimo:" + numeroMinimo + letraMin);
 
 }
 
