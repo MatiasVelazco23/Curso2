@@ -5,7 +5,7 @@
 function mostrar()
 {
 	var nombre;
-prompt("Ingrese un nombre");
-document.getElementById("elNombre").value=nombre;
+prompt("Ingrese un nombre");                                //usar prompt para sacar dato
+document.getElementById("elNombre").value=nombre;           // mostrar dato en esa casilla 
 }
 
