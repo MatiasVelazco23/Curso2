@@ -10,6 +10,7 @@ function mostrar() {
 	var contadorPares = 0;
 	var promedioPos=0
 	var promedioNeg=0
+	var contador=0
 	var diferencia;
 	var numero;
 	var seguir;
@@ -43,14 +44,18 @@ function mostrar() {
 
 		seguir = prompt("Quiere ingresar otro numero?");
 	} while (seguir == 's');
-
+contador++
 	if (contadorPositivos != 0) {
 		promedioPos = acumuladorPositivos / contadorPositivos;
 	}
-	else if (contadorNegativos != 0) {
+	if (contadorNegativos != 0) {
 		promedioNeg = acumuladorNegativos / contadorNegativos;
 	}
+	
 	diferencia = contadorPositivos - contadorNegativos;
+
+	
+
 
 	document.write("1 - Suma de los negativos: " + acumuladorNegativos + "</br>");
 	document.write("2 - Suma de los positivos: " + acumuladorPositivos + "</br>");

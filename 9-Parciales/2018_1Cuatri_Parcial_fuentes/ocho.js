@@ -18,7 +18,7 @@ function mostrar() {
     var numeroMinimo;
     do {
         letra = prompt("Ingrese Letra");
-        while (!((letra >= "A" && letra <= "Z") || (letra >= "a" && letra <= "z"))) {
+        while (letra < "A" && letra > "Z" || letra < "a" && letra > "z"){
             letra = parseInt(prompt("Ingrese letra valida"));
         }
         numero=parseInt(prompt("Ingrese numero"));
@@ -147,7 +147,7 @@ function mostrar() {
 
         seguir = prompt("Quiere continuar?:");
     } while (seguir == 's');
-
+ 
     if (contadorPos != 0) {
         promedioPos = acumuladorPos / contadorPos;
     }
